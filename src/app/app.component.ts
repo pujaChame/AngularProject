@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Temporary';
+  ngOnInit(){
+  console.log("Created new branch Branch1");
+  }
+  
 }
