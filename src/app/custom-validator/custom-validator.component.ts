@@ -22,6 +22,7 @@ export class CustomValidatorComponent implements  OnInit {
   }
 
   saveData(){
+    console.log("Data Saved")
     console.log(this.employeeReg.value);
     console.log(this.employeeReg)
   }
