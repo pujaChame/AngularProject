@@ -1,0 +1,24 @@
+<div class="container shadow border w-50 mt-5">
+    <h4 class="text-center">User Regstration form</h4>
+    <form [formGroup]="employeeReg" (ngSubmit)="saveData()">
+        <div class="mb-2">
+            <label for="id1" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="id1" formControlName="fullName">
+        </div>
+        <div class="mb-2">
+            <label for="id2" class="form-label">mobile no</label>
+            <input type="text" class="form-control" id="id2" formControlName="mobile">
+        </div>
+        <div class="mb-2">
+            <label for="id3" class="form-label">Email</label>
+            <input type="email" class="form-control" id="id3" formControlName="email">
+            <div id="validationServer03Feedback" class="invalid-feedback d-block"
+            *ngIf="email?.errors?.['ValidEmail']">
+           Please Select Correct Domain for Email Id.
+        </div>
+        </div>
+         <button type="submit" class="bg-success mx-1">Submit</button>
+                 
+    </form>
+
+</div>

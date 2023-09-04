@@ -1,0 +1,59 @@
+<div class="container border shadow w-50" >
+  <h1 class="text-center bg-success mt-4 p-2">Registration form</h1>
+    <form #regForm="ngForm" (ngSubmit)="SaveData(regForm)">
+        <div class="mb-3">
+          <label for="id1" class="form-label"> Full Name</label>
+          <input type="text" class="form-control" id="id1" name="fname" ngModel required minlength="2" pattern="[a-zA-Z]{2,10}" #fname="ngModel">
+          
+          <div *ngIf="fname.invalid && fname.touched ">
+           <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="fname.errors?.['required']">
+            It is required field.
+          </div>
+          <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="fname.errors?.['minlength']">
+            Minimum 2 characters are required.
+          </div>
+          <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="fname.errors?.['pattern']">
+            Please provide the valid name.
+          </div>
+        </div>
+         </div>
+         <div class="mb-3">
+          <label for="id2" class="form-label">Mobile no.</label>
+          <input type="text" class="form-control" id="id2" name="mobile" ngModlel>
+        </div>
+        <div class="mb-3">
+            <label for="id3" class="form-label">Email</label>
+            <input type="text" class="form-control" id="id3"  name="email" ngModel>
+          </div>
+          <div class="mb-3">
+            <label for="id4" class="form-label">Address</label>
+            <input type="text" class="form-control" id="id4" name="address" ngModel>
+          </div>
+          <div class="container  m-3">
+        <div class="mb-3 form-radio">
+          <input type="radio" class="form-radio-input" id="id5" name="gender" ngModel>
+          <label class="form-check-label" for="id5">Male</label>
+        </div>
+        <div class="mb-3 form-radio">
+            <input type="radio" class="form-radio-input" id="id6" name="gender" ngModel>
+            <label class="form-check-label" for="id6">Female</label>
+          </div> 
+        </div>
+        <button type="submit" class="btn btn-primary mb-3 ">Submit</button>
+      </form>
+      <div class="container border shadow ">
+        <div><span>Value:</span>{{regForm.value | json}}</div>
+        <div><span>Valid:</span>{{regForm.valid}}</div>
+        <div><span>Invalid:</span>{{regForm.invalid}}</div>
+        <div><span>Pristine:</span>{{regForm.pristine}}</div>
+        <div><span>Dirty:</span>{{regForm.dirty}}</div>
+      </div>
+</div>
+
+
+          <!-- <div><span>Value:</span>{{fname.value | json}}</div>
+          <div><span>Valid:</span>{{fname.valid}}</div>
+          <div><span>Invalid:</span>{{fname.invalid}}</div>
+          <div><span>Pristine:</span>{{fname.pristine}}</div>
+          <div><span>Dirty:</span>{{fname.dirty}}</div>
+          <div><span>Errors:</span>{{fname.errors | json}}</div> -->

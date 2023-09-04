@@ -1,0 +1,21 @@
+<div class="row mb-5">
+    <div class="col-md-3">
+        <label for="id1" class="form-label">Employee Name</label>
+        <input type="text" class="form-control" id="id1" [(ngModel)]="ChildEmpObj.empNmae">
+      </div>
+      <div class="col-md-3">
+        <label for="id2" class="form-label">Employee Salary</label>
+        <input type="text" class="form-control" id="id2" [(ngModel)]="ChildEmpObj.empSalary" >
+      </div>
+      <div class="col-md-3">
+        <label for="id3" class="form-label">Employee Gender</label>
+        <input type="text" class="form-control" id="id3"  [(ngModel)]="ChildEmpObj.empGender">
+      </div>
+      <div class="col-md-3">
+        <label for="id4" class="form-label">Employee Designation</label>
+        <input type="text" class="form-control" id="id4" [(ngModel)]="ChildEmpObj.empDesignation" >
+      </div>
+</div>
+<div class="mb-3">
+<button type="button" class="btn btn-secondary" (click)="sendEmployeeInputs()">Add Employee</button>
+</div>

@@ -1,0 +1,36 @@
+<div class="container shadow border w-50">
+    <form [formGroup]="employeeReg" (ngSubmit)="saveData()">
+        <div class="mb-2">
+            <label for="id1" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="id1" formControlName="fullName">
+        </div>
+        <div class="mb-2">
+            <label for="id2" class="form-label">mobile no</label>
+            <input type="text" class="form-control" id="id2" formControlName="mobile">
+        </div>
+        <div class="mb-2">
+            <label for="id3" class="form-label">Email</label>
+            <input type="text" class="form-control" id="id3" formControlName="email">
+        </div>
+        <div formGroupName="address">
+            <div class="mb-2">
+                <label for="id4" class="form-label">Line</label>
+                <input type="text" class="form-control" id="id4" formControlName="line1">
+            </div>
+            <div class="mb-2">
+                <label for="id5" class="form-label">City</label>
+                <input type="text" class="form-control" id="id5" formControlName="city">
+            </div>
+
+            <div class="mb-2">
+                <label for="id6" class="form-label">State</label>
+                <input type="text" class="form-control" id="id6" formControlName="state">
+            </div>
+        </div>
+                 <button type="submit" class="bg-success mx-1">Submit</button>
+                 <button type="button" class="bg-success mx-1" (click)="GetData()">Get Data</button>
+                 <button type="button" class="bg-success mx-1" (click)="PatchData()">Patch Data</button>
+
+    </form>
+
+</div>

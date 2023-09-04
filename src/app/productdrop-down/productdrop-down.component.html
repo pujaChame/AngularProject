@@ -1,0 +1,17 @@
+<div>
+    <label for="id1" class="mx-2">Select State</label>
+    <select name="stateName" id="id1" [(ngModel)]="stateName" (click)="getCityNames()">
+        <option value="">Select</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Madhyapradesh">Madhyapradesh</option>
+    </select>
+</div>
+
+<div class="mt-2">
+    <label for="id2" class="mx-2">Select City</label>
+    <select id="id2" name="empCity">
+        <option value="">Select</option>
+       <option *ngFor="let item of cityNames" [value]="item">{{item}}</option>
+    </select>
+</div>

@@ -1,0 +1,45 @@
+<div class="container border shadow w-50">
+    <h4 class="text-center mt-2">Employee Details</h4>
+    <form [formGroup]="employeeRegistration" (ngSubmit)="savedata()">
+        <div class="mb-2 ">
+            <label for="id1" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="id1" formControlName="fullName">
+            <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="employeeRegistration.controls['fullName'].errors?.['required']">
+                It is required field.
+            </div>
+            <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="employeeRegistration.controls['fullName'].errors?.['minlength']">
+                Minimum 2 characters are required.
+            </div>
+            <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="employeeRegistration.controls['fullName'].errors?.['pattern']">
+                Please Provide valid Name.
+            </div>
+        </div>
+        <div class="mb-2">
+            <label for="id2" class="form-label w-30">Mobile No</label>
+            <input type="text" class="form-control" id="id2" formControlName="mobile">
+        </div>
+        <div class="mb-2">
+            <label for="id3" class="form-label">Email</label>
+            <input type="text" class="form-control" id="id3" formControlName="email">
+        </div>
+        <div formGroupName="address">
+        <div class="mb-2">
+            <label for="id4" class="form-label">line</label>
+            <input type="text" class="form-control" id="id4" formControlName="line1">
+        </div>
+        <div class="mb-2">
+            <label for="id5" class="form-label">City</label>
+            <input type="text" class="form-control" id="id5" formControlName="city">
+        </div>
+        <div class="mb-2">
+            <label for="id6" class="form-label">State</label>
+            <input type="text" class="form-control" id="id6" formControlName="state">
+        </div>
+        </div>
+        <div class="mb-2 text-center">
+            <button type="submit" class="bg-secondary m-1">Submit</button>
+            <button type="button" class="bg-secondary m-1" (click)="getData()">Get Data</button>
+            <button type="button" class="bg-secondary m-1" (click)="patchData()">Patch Data</button>
+        </div>
+    </form>
+</div>

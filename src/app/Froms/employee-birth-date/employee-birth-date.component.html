@@ -1,0 +1,64 @@
+<div class="container w-50 border shadow mt-4">
+    <form #employeeForm="ngForm" (ngSubmit)="saveEmpDatails(employeeForm)">
+    <h2 class="bg-secondary p-2 text-center mt-3">Employee Details </h2>
+<div class="mb-3">
+    <label for="id1" class="form-label">Name</label>
+    <input type="text" class="form-control" id="id1" name="fullname" #fullname="ngModel" [(ngModel)]="empObj.Name" required minlength="2" pattern="[a-zA-Z]{2,15}">
+    <div *ngIf="employeeForm.submitted">
+    <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="fullname.errors?.['required']">
+     it is a required Field.
+    </div>
+    <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="fullname.errors?.['minlength']">
+        please enter minimum 2 characters.
+       </div>
+       <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="fullname.errors?.['pattern']">
+      Please Enter valid Name.
+       </div>
+    </div>
+</div>
+  <div class="mb-3">
+    <label for="id2" class="form-label">Mobile</label>
+    <input type="text" class="form-control" id="id2" name="mobile" [(ngModel)]="empObj.MobileNo" #mobile="ngModel"  required minlength="10" pattern="[0-9]{10,10}">
+    <div *ngIf="employeeForm.submitted">
+    <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="mobile.errors?.['required']">
+        It is required field.
+         </div>
+         <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="mobile.errors?.['minlength']">
+            Please Enter proper 10 digit number.
+             </div> 
+             <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="mobile.errors?.['pattern']">
+                Please Enter number not character.
+                 </div>
+                 </div>  
+
+</div>
+  <div class="mb-3">
+    <label for="id3" class="form-label">Email</label>
+    <input type="text" class="form-control" id="id3" name="email" [(ngModel)]="empObj.Email" #email="ngModel" required pattern="[a-zA-Z0-9]{4,15}">
+    <div *ngIf="employeeForm.submitted">
+    <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="email.errors?.['required']">
+        it is required field.
+         </div> 
+         <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="email.errors?.['pattern']">
+            Please Enter proper email Id.
+             </div> 
+             </div>
+
+</div>
+  <div class="mb-3">
+    <label for="id4" class="form-label">Date Of Birth</label>
+    <input type="date" class="form-control" id="id4" name="dob" [(ngModel)]="empObj.Dob" #dob="ngModel" required>
+    <div *ngIf="employeeForm.submitted">
+    <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="dob.errors?.['required']">
+        It is required field.
+         </div> 
+         </div>
+        
+  </div>
+   <div class="mb-3 text-center">
+  <button type="submit" class="btn btn-info mb-4 mx-2">Submit</button>
+  <button type="button" class="btn btn-info mb-4 mx-2" (click)="getData()">Get Data</button>
+  <button type="button" class="btn btn-info mb-4 mx-2 " (click)="resetData()">Reset</button>
+</div>
+</form>
+</div>

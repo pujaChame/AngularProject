@@ -1,0 +1,28 @@
+<div class="container border shadow ">
+<table class="table container w-60 border shadow">
+    <thead>
+      <tr>
+        <th scope="col">Sr No.</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Employee Salary</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Selection</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr scope="row" *ngFor="let item of employeeList; let i=index">
+            <td>{{item.empId}}</td>
+            <td>{{item.empNmae}}</td>
+            <td>{{item.empSalary}}</td>
+            <td>{{item.empGender}}</td>
+            <td>{{item.empDesignation}}</td>
+            <td><a class="fs-6 cursor" (click)="editEmpData(i)">Edit</a>&nbsp;<a class="fs-6 cursor" (click)="deleteEmpData(i)">Delete</a></td>
+        </tr>
+    </tbody>
+  </table>
+  <div>
+    <app-create-product [ChildEmpObj]="empObj" (sendObjToParent)="receiveEmpInputFromChild($event)"></app-create-product>
+
+  </div>
+</div>

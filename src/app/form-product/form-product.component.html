@@ -1,0 +1,66 @@
+<div class="container w-50 border shadow">
+    <form #productReg="ngForm" (ngSubmit)="saveProduct(productReg)">
+        <h2> Product Details</h2>
+        <!-- <div class="mb-3">
+            <label for="id1" class="form-label">Category </label>
+            <input type="text" class="form-control" id="id1" name="category" required [(ngModel)]="productObj.category">
+        </div>
+        <div class="mb-3">
+            <label for="id2" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="id2" name="product" required
+                [(ngModel)]="productObj.productName">
+        </div> -->
+
+        <div class="mb-3">
+            <label for="id10" class="mx-2">Select Category</label>
+            <select name="productName" id="id10" [(ngModel)]="productName" (click)="getProductNames()"
+              [(ngModel)]="productObj.category">
+              <option value="">Select</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Home Appliance">Home Appliance</option>
+              <option value="Tool Kits">Tool Kits</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="id20" class="mx-2">Select Product</label>
+            <select id="id2" name="category" id="id20" [(ngModel)]="productObj.productName"  >
+              <option value="">Select</option>
+              <option *ngFor="let item of indivialProduct" [value]="item">{{item}}</option>
+            </select>
+          </div> 
+
+        <div class="mb-3">
+            <label for="id3" class="form-label">Price</label>
+            <input type="text" class="form-control" id="id3" name="price" [(ngModel)]="productObj.price" (change)="TotalPrice()"
+                #price="ngModel" required pattern="[0-9]{1,10}">
+
+                <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="price.errors?.['pattern']">
+                    Please provide price in numeric digit.
+                </div>
+            
+        </div>
+        <div class="mb-3">
+            <label for="id4" class="form-label"> Quantity</label>
+            <input type="text" class="form-control" id="id4" name="quantity"  [(ngModel)]="productObj.quantity" (change)="TotalPrice()" #quantity="ngModel"
+            required pattern="[0-9]{1,10}">
+                <div id="validationServer03Feedback" class="invalid-feedback d-block" *ngIf="quantity.errors?.['pattern']">
+                    Please provide price in numeric digit.
+                </div>
+        </div>
+        <div class="mb-5 ">
+            <label for="id5" class="form-label">Total Price</label>
+            <input type="text" class="form-control" id="id5" name="total"   [(ngModel)]="productObj.TotalPrice" >
+           
+        </div>
+        <h4>Total Price: {{productObj.TotalPrice}}</h4>
+        <div class="mb-4 text-center">
+            <button type="Submit" class="btn btn-primary mx-1 " >Submit</button>
+            <button type="button" class="btn btn-primary mx-1 " (click)="getData()">Get Data</button>
+            <button type="button" class="btn btn-primary mx-1 " (click)="resetData()">Reset</button>
+        </div>
+
+
+
+
+    </form>
+</div>

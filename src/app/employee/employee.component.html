@@ -1,0 +1,20 @@
+<div class="container border shadow ">
+    <table class="table container w-60 border shadow">
+        <thead>
+          <tr>
+            <th scope="col">Sr No.</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Employee Salary</th>
+            <th scope="col">Designation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let item of employeeList; let i=index">
+                <td>{{item.empId}}</td>
+                <td>{{item.empNmae}}</td>
+                <td>{{item.empSalary}}</td>
+                <td>{{item.empDesignation}}</td>
+               </tr>
+        </tbody>
+      </table>
+    </div>

@@ -1,0 +1,11 @@
+<div clas="container w-60 shadow border">
+    <div class="col-md-6 shadow border">
+        <div class="mb-3">
+            <input type="text" class="form-control" id="id1"  [(ngModel)]="messageFromParent" >
+            <h4>Message from child :{{receveData}}</h4>
+          </div>
+     </div>
+    <div class="col-md-6 shadow border">
+    <app-child-message [MeassageFromParent]="messageFromParent" (SendMessage)="RecieveData($event)"></app-child-message>
+    </div>
+</div>
